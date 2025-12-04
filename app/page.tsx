@@ -11,24 +11,38 @@ export default function HomePage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Background Images with Responsive Design */}
+        <div className="absolute inset-0 -z-20">
+          {/* Mobile Background */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat md:hidden"
+            style={{ backgroundImage: 'url(/backgrounds/page_background_2.webp)' }}
+          />
+          {/* Desktop Background */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat hidden md:block"
+            style={{ backgroundImage: 'url(/backgrounds/page_background.webp)' }}
+          />
+        </div>
+
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-8">
             <div className="inline-block">
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-secondary rounded-full text-sm font-medium text-foreground">
                 <Sparkles className="h-4 w-4 text-accent" />
-                Digital Exhibition 2024
+                Industrial Design Exhibition 2025
               </span>
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-bold text-balance">被設計的設計</h1>
+            <h1 className="text-5xl md:text-7xl font-bold text-balance text-white" style={{ fontFamily: 'FangZhengYouTi, sans-serif' }}>被設計的設計</h1>
 
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto text-balance">
-              DESIGN
+            <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto text-balance">
+              DESIGNED
             </p>
 
-            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              邀請您走進展場，一起感受並思考設計的成長旅程。
+            <p className="text-base md:text-lg text-white max-w-2xl mx-auto leading-relaxed">
+              邀請您走進展場，一起感受並思考設計的成長旅程
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">

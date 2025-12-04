@@ -1,4 +1,5 @@
-import type { Metadata } from "next"
+"use client"
+
 import Image from "next/image"
 import { BookOpen, Award, Building2 } from "lucide-react"
 import { Card } from "@/components/ui/card"
@@ -6,10 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
-
-export const metadata: Metadata = {
-  title: "展覽團隊 - 被設計的設計",
-}
+import { useState, useEffect, useRef } from "react"
 
 const facultyData = {
   professors: [
@@ -19,7 +17,7 @@ const facultyData = {
       nameEn: "Heng-Chi Yeh",
       position: "助理教授及專業技術人員",
       specialties: ["工業設計導論", "新產品企劃", "地方創生"],
-      image: "/placeholder.svg",
+      image: "/faculty-photos/Heng-Chih Yeh.jpg",
     },
     {
       id: 3,
@@ -27,7 +25,7 @@ const facultyData = {
       nameEn: "Hsiang-Tang Chang",
       position: "副教授",
       specialties: ["永續設計", "專利迴避設計", "3D列印技術應用"],
-      image: "/placeholder.svg",
+      image: "/faculty-photos/Hsiang-Tang Chang.jpg",
     },
     {
       id: 4,
@@ -35,7 +33,7 @@ const facultyData = {
       nameEn: "Chun-Tung Chen",
       position: "助理教授",
       specialties: ["傢俱設計", "表現技法", "數位造型設計"],
-      image: "/placeholder.svg",
+      image: "/faculty-photos/Chun-Tung Chen.jpg",
     },
     {
       id: 5,
@@ -43,7 +41,7 @@ const facultyData = {
       nameEn: "Chun-Chih Chen",
       position: "教授",
       specialties: ["工業設計", "服務體驗設計", "工藝結合"],
-      image: "/placeholder.svg",
+      image: "/faculty-photos/Chun-Chih Chen.jpg",
     },
     {
       id: 7,
@@ -51,7 +49,7 @@ const facultyData = {
       nameEn: "Hung-Cheng Tsai",
       position: "教授兼創新工程設計中心主任",
       specialties: ["產品設計與開發", "人因設計", "感性工學"],
-      image: "/placeholder.svg",
+      image: "/faculty-photos/Hung-Cheng Tsai.jpg",
     },
     {
       id: 9,
@@ -59,7 +57,7 @@ const facultyData = {
       nameEn: "Lung-Yin Lin",
       position: "副教授及專業技術人員及系主任",
       specialties: ["機構設計", "電腦輔助設計", "模型製作"],
-      image: "/placeholder.svg",
+      image: "/faculty-photos/Lung-Yin Lin.jpg",
     },
     {
       id: 10,
@@ -67,7 +65,7 @@ const facultyData = {
       nameEn: "I-Jen Sung",
       position: "副教授及專業技術人員",
       specialties: ["工業設計", "設計企劃", "輔具設計"],
-      image: "/placeholder.svg",
+      image: "/faculty-photos/I-Jen Sung.jpg",
     },
     {
       id: 11,
@@ -75,7 +73,7 @@ const facultyData = {
       nameEn: "Ti-Wan Kung",
       position: "助理教授",
       specialties: ["整體視覺形象管理", "圖文影像廣告設計", "數位媒體整合應用"],
-      image: "/placeholder.svg",
+      image: "/faculty-photos/Ti-Wan Kung.jpg",
     },
   ],
   curatorialTeam: [
@@ -221,9 +219,61 @@ const facultyData = {
 }
 
 export default function FacultyPage() {
+  const [clickCount, setClickCount] = useState(0)
+  const [showEmoji, setShowEmoji] = useState(false)
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const resetTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  const handleSpecialClick = () => {
+    // 清除重置計時器
+    if (resetTimeoutRef.current) {
+      clearTimeout(resetTimeoutRef.current)
+    }
+
+    const newCount = clickCount + 1
+    setClickCount(newCount)
+
+    // 達到 20 次點擊
+    if (newCount >= 20) {
+      setShowEmoji(true)
+      setClickCount(0)
+
+      // 3 秒後隱藏 emoji
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
+      timeoutRef.current = setTimeout(() => {
+        setShowEmoji(false)
+      }, 3000)
+    } else {
+      // 2 秒內沒有點擊則重置計數
+      resetTimeoutRef.current = setTimeout(() => {
+        setClickCount(0)
+      }, 2000)
+    }
+  }
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current)
+      if (resetTimeoutRef.current) clearTimeout(resetTimeoutRef.current)
+    }
+  }, [])
+
   return (
     <div className="min-h-screen">
       <Navigation />
+
+      {/* 彩蛋 Emoji 彈出效果 */}
+      {showEmoji && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
+          <div className="animate-emoji-bounce">
+            <span className="text-[200px] md:text-[300px] drop-shadow-2xl select-none">
+              🍬
+            </span>
+          </div>
+        </div>
+      )}
       
       <main className="pt-24 pb-16">
       {/* Hero Section */}
@@ -248,7 +298,12 @@ export default function FacultyPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {facultyData.professors.map((professor) => (
               <Card key={professor.id} className="p-6 hover:shadow-lg transition-shadow">
-                <div className="aspect-square relative mb-4 rounded-lg overflow-hidden bg-secondary">
+                <div 
+                  className={`aspect-square relative mb-4 rounded-lg overflow-hidden bg-secondary ${
+                    professor.name === "張祥唐" ? "select-none" : ""
+                  }`}
+                  onClick={professor.name === "張祥唐" ? handleSpecialClick : undefined}
+                >
                   <Image
                     src={professor.image || "/placeholder.svg"}
                     alt={professor.name}

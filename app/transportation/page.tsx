@@ -34,7 +34,16 @@ export default function TransportationPage() {
                     <p className="text-muted-foreground">高雄市前鎮區中山三路39號</p>
                   </div>
                   <div className="aspect-video w-full bg-secondary rounded-lg overflow-hidden">
-                    <img src="/taipei-map-location.jpg" alt="展覽地點地圖" className="w-full h-full object-cover" />
+                    <iframe 
+                      src="https://maps.google.com/maps?q=高雄市前鎮區中山三路39號&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                      width="100%" 
+                      height="100%" 
+                      style={{ border: 0 }} 
+                      allowFullScreen={true}
+                      loading="lazy" 
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="展覽地點地圖"
+                    />
                   </div>
                 </div>
               </CardContent>
