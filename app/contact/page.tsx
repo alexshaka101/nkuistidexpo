@@ -65,7 +65,7 @@ export default function ContactPage() {
                         <div className="space-y-1">
                           <p className="text-sm font-medium">網站</p>
                           <a
-                            href="https://nkuist-id-expo.vercel.app/"
+                            href="https://nkuist-id-expo.netlify.app/"
                             className="text-sm text-muted-foreground hover:text-accent transition-colors"
                             target="_blank"
                             rel="noopener noreferrer"

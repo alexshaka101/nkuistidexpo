@@ -53,7 +53,7 @@ export default function HomePage() {
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link href="/about">了解策展理念</Link>
+                <Link href="/about">了解展覽資訊</Link>
               </Button>
             </div>
           </div>
