@@ -95,7 +95,7 @@ const facultyData = {
       id: 103,
       name: "陳愷倫",
       nameEn: "Chen Kai-Lun",
-      role: "策展人",
+      role: "副召",
       image: "/placeholder.svg",
     },
     {
@@ -179,14 +179,14 @@ const facultyData = {
       id: 115,
       name: "吳勃頤",
       nameEn: "Wu Po-Yi",
-      role: "策展人",
+      role: "網站組",
       image: "/placeholder.svg",
     },
     {
       id: 116,
       name: "邱凱鴻",
       nameEn: "Chiu Kai-Hung",
-      role: "策展人",
+      role: "網站組",
       image: "/placeholder.svg",
     },
   ],
@@ -219,61 +219,88 @@ const facultyData = {
 }
 
 export default function FacultyPage() {
-  const [clickCount, setClickCount] = useState(0)
-  const [showEmoji, setShowEmoji] = useState(false)
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
-  const resetTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  // ==================== 彩蛋功能 ====================
+  
+  // 張祥唐彩蛋 - 點擊 20 次顯示糖果 🍬
+  const [changClickCount, setChangClickCount] = useState(0)
+  const [showChangEmoji, setShowChangEmoji] = useState(false)
+  const changTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const changResetTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
-  const handleSpecialClick = () => {
-    // 清除重置計時器
-    if (resetTimeoutRef.current) {
-      clearTimeout(resetTimeoutRef.current)
-    }
-
-    const newCount = clickCount + 1
-    setClickCount(newCount)
-
-    // 達到 20 次點擊
+  const handleChangClick = () => {
+    if (changResetTimeoutRef.current) clearTimeout(changResetTimeoutRef.current)
+    const newCount = changClickCount + 1
+    setChangClickCount(newCount)
     if (newCount >= 20) {
-      setShowEmoji(true)
-      setClickCount(0)
-
-      // 3 秒後隱藏 emoji
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current)
-      }
-      timeoutRef.current = setTimeout(() => {
-        setShowEmoji(false)
-      }, 3000)
+      setShowChangEmoji(true)
+      setChangClickCount(0)
+      if (changTimeoutRef.current) clearTimeout(changTimeoutRef.current)
+      changTimeoutRef.current = setTimeout(() => setShowChangEmoji(false), 3000)
     } else {
-      // 2 秒內沒有點擊則重置計數
-      resetTimeoutRef.current = setTimeout(() => {
-        setClickCount(0)
-      }, 2000)
+      changResetTimeoutRef.current = setTimeout(() => setChangClickCount(0), 2000)
     }
   }
 
+  // 蔡宏政彩蛋 - 點擊 10 次顯示「不要氣餒」+ 水餃 🥟
+  const [tsaiClickCount, setTsaiClickCount] = useState(0)
+  const [showTsaiEmoji, setShowTsaiEmoji] = useState(false)
+  const tsaiTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const tsaiResetTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  const handleTsaiClick = () => {
+    if (tsaiResetTimeoutRef.current) clearTimeout(tsaiResetTimeoutRef.current)
+    const newCount = tsaiClickCount + 1
+    setTsaiClickCount(newCount)
+    if (newCount >= 10) {
+      setShowTsaiEmoji(true)
+      setTsaiClickCount(0)
+      if (tsaiTimeoutRef.current) clearTimeout(tsaiTimeoutRef.current)
+      tsaiTimeoutRef.current = setTimeout(() => setShowTsaiEmoji(false), 3000)
+    } else {
+      tsaiResetTimeoutRef.current = setTimeout(() => setTsaiClickCount(0), 2000)
+    }
+  }
+
+  // 清理彩蛋計時器
   useEffect(() => {
     return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current)
-      if (resetTimeoutRef.current) clearTimeout(resetTimeoutRef.current)
+      if (changTimeoutRef.current) clearTimeout(changTimeoutRef.current)
+      if (changResetTimeoutRef.current) clearTimeout(changResetTimeoutRef.current)
+      if (tsaiTimeoutRef.current) clearTimeout(tsaiTimeoutRef.current)
+      if (tsaiResetTimeoutRef.current) clearTimeout(tsaiResetTimeoutRef.current)
     }
   }, [])
+  
+  // ==================== 彩蛋功能結束 ====================
 
   return (
     <div className="min-h-screen">
       <Navigation />
 
-      {/* 彩蛋 Emoji 彈出效果 */}
-      {showEmoji && (
+      {/* ==================== 彩蛋彈出效果 ==================== */}
+      
+      {/* 張祥唐彩蛋 - 糖果 🍬 */}
+      {showChangEmoji && (
         <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
           <div className="animate-emoji-bounce">
-            <span className="text-[200px] md:text-[300px] drop-shadow-2xl select-none">
-              🍬
-            </span>
+            <span className="text-[200px] md:text-[300px] drop-shadow-2xl select-none">🍬</span>
           </div>
         </div>
       )}
+
+      {/* 蔡宏政彩蛋 - 不要氣餒 + 水餃 🥟 */}
+      {showTsaiEmoji && (
+        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center pointer-events-none">
+          <div className="animate-emoji-bounce text-center">
+            <p className="text-4xl md:text-6xl font-bold text-foreground mb-4 drop-shadow-lg bg-background/80 px-8 py-4 rounded-2xl">
+              不要氣餒
+            </p>
+            <span className="text-[150px] md:text-[250px] drop-shadow-2xl select-none">🥟</span>
+          </div>
+        </div>
+      )}
+      
+      {/* ==================== 彩蛋彈出效果結束 ==================== */}
       
       <main className="pt-24 pb-16">
       {/* Hero Section */}
@@ -300,9 +327,15 @@ export default function FacultyPage() {
               <Card key={professor.id} className="p-6 hover:shadow-lg transition-shadow">
                 <div 
                   className={`aspect-square relative mb-4 rounded-lg overflow-hidden bg-secondary ${
-                    professor.name === "張祥唐" ? "select-none" : ""
+                    professor.name === "張祥唐" || professor.name === "蔡宏政" ? "select-none" : ""
                   }`}
-                  onClick={professor.name === "張祥唐" ? handleSpecialClick : undefined}
+                  onClick={
+                    professor.name === "張祥唐" 
+                      ? handleChangClick 
+                      : professor.name === "蔡宏政" 
+                        ? handleTsaiClick 
+                        : undefined
+                  }
                 >
                   <Image
                     src={professor.image || "/placeholder.svg"}
