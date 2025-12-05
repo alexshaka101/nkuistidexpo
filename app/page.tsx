@@ -11,7 +11,7 @@ export default function HomePage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative aspect-video px-4 sm:px-6 lg:px-8 overflow-hidden flex items-center justify-center">
         {/* Background Images with Responsive Design */}
         <div className="absolute inset-0 -z-20">
           {/* Mobile Background */}
@@ -64,146 +64,146 @@ export default function HomePage() {
         <div className="absolute bottom-20 right-10 w-32 h-32 bg-accent/10 rounded-full blur-3xl -z-10" />
       </section>
 
-      {/* Value Proposition Section */}
+      {/* Exhibition Info Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-balance">為什麼選擇我們的展覽？</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">提供專業、友好且可回訪的設計知識庫</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="border-border hover:border-accent transition-colors">
-              <CardContent className="pt-6 space-y-4">
-                <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                  <BookOpen className="h-6 w-6 text-accent" />
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
+            {/* Left Side - Date, Time & Admission */}
+            <div className="lg:w-1/2 space-y-10">
+              {/* Date */}
+              <div className="flex items-end gap-4">
+                <div className="text-5xl md:text-6xl font-bold tracking-tight">2026.01.09</div>
+                <div className="flex items-center gap-2 pb-2">
+                  <span className="text-base text-muted-foreground">週五</span>
+                  <span className="text-2xl text-muted-foreground">——</span>
+                  <span className="text-base text-muted-foreground">週日</span>
                 </div>
-                <h3 className="text-lg font-semibold">知識導向</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  深入的策展理念與設計思考，建立系統性的知識架構
-                </p>
-              </CardContent>
-            </Card>
+                <div className="text-5xl md:text-6xl font-bold tracking-tight">11</div>
+              </div>
 
-            <Card className="border-border hover:border-accent transition-colors">
-              <CardContent className="pt-6 space-y-4">
-                <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                  <Sparkles className="h-6 w-6 text-accent" />
+              {/* Opening Hours */}
+              <div className="space-y-2">
+                <div className="flex items-center gap-4">
+                  <span className="text-3xl md:text-4xl font-bold">11:00</span>
+                  <span className="text-2xl text-muted-foreground">——</span>
+                  <span className="text-3xl md:text-4xl font-bold">14:00</span>
+                  <span className="text-2xl text-muted-foreground">——</span>
+                  <span className="text-3xl md:text-4xl font-bold">17:00</span>
                 </div>
-                <h3 className="text-lg font-semibold">極簡體驗</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  專業且友好的觀展介面，讓設計理念清晰呈現
-                </p>
-              </CardContent>
-            </Card>
+                <div className="flex items-center gap-4 text-sm text-muted-foreground pl-1">
+                  <span className="w-[72px]"></span>
+                  <span className="w-[91px]"></span>
+                  <span>週日</span>
+                  <span className="w-[90px]"></span>
+                  <span>週五、週六</span>
+                </div>
+              </div>
 
-            <Card className="border-border hover:border-accent transition-colors">
-              <CardContent className="pt-6 space-y-4">
-                <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                  <Users className="h-6 w-6 text-accent" />
-                </div>
-                <h3 className="text-lg font-semibold">跨族群設計</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  從專業人士到一般大眾，人人都能理解的設計語言
-                </p>
-              </CardContent>
-            </Card>
+              {/* Free Admission */}
+              <div>
+                <div className="text-xl md:text-2xl font-bold text-[#C4A35A] mb-2">免費入場</div>
+                <p className="text-sm text-[#C4A35A]">各場館將於閉館前30分鐘停止入場，實際時間請依現場公告為準</p>
+              </div>
+            </div>
 
-            <Card className="border-border hover:border-accent transition-colors">
-              <CardContent className="pt-6 space-y-4">
-                <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                  <MessageCircle className="h-6 w-6 text-accent" />
-                </div>
-                <h3 className="text-lg font-semibold">互動參與</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  留言、投票與分享，建立設計社群的交流平台
-                </p>
-              </CardContent>
-            </Card>
+            {/* Right Side - Grade Sections */}
+            <div className="lg:w-1/2 space-y-8">
+              {/* 大一 */}
+              <div>
+                <h3 className="text-lg font-bold mb-2">大一</h3>
+                <p className="text-sm text-muted-foreground">基礎造型與感知訓練</p>
+              </div>
+
+              {/* 大二 */}
+              <div>
+                <h3 className="text-lg font-bold mb-2">大二</h3>
+                <p className="text-sm text-muted-foreground">速度與造型的思考</p>
+              </div>
+
+              {/* 大三 */}
+              <div>
+                <h3 className="text-lg font-bold mb-2">大三</h3>
+                <p className="text-sm text-muted-foreground">以設計回應世界議題</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Exhibition Zones Preview */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      {/* News Section */}
+      <section className="pt-20 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-balance">展區導覽</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">探索不同主題的設計展區，從理念到實踐</p>
+          {/* Header */}
+          <div className="flex items-end justify-between mb-8">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold">News</h2>
+              <p className="text-muted-foreground">最新消息</p>
+            </div>
+            <Link href="/news" className="flex items-center gap-2 text-sm font-medium hover:text-accent transition-colors group">
+              More
+              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Zone Card 1 */}
-            <div className="group cursor-pointer">
-              <div className="aspect-[4/3] bg-gradient-to-br from-secondary to-muted rounded-lg mb-4 overflow-hidden">
+          {/* News Cards */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {/* News Card 1 */}
+            <Link href="/news/1" className="group cursor-pointer">
+              <div className="aspect-[4/3] bg-gradient-to-br from-secondary to-muted rounded-lg mb-3 overflow-hidden">
                 <div className="w-full h-full flex items-center justify-center bg-accent/5 group-hover:bg-accent/10 transition-colors">
-                  <span className="text-6xl font-bold text-accent/20">01</span>
+                  <span className="text-4xl font-bold text-accent/20">01</span>
                 </div>
               </div>
-              <h3 className="text-xl font-semibold mb-2 group-hover:text-accent transition-colors">設計思維展區</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">探索設計方法論與創意思考的核心概念</p>
-            </div>
+              <h3 className="text-sm font-medium mb-2 line-clamp-2 group-hover:text-accent transition-colors">2025期末設計展正式開幕，邀請您一同參與設計盛會...</h3>
+              <p className="text-xs text-muted-foreground">2025-12-05</p>
+            </Link>
 
-            {/* Zone Card 2 */}
-            <div className="group cursor-pointer">
-              <div className="aspect-[4/3] bg-gradient-to-br from-secondary to-muted rounded-lg mb-4 overflow-hidden">
+            {/* News Card 2 */}
+            <Link href="/news/2" className="group cursor-pointer">
+              <div className="aspect-[4/3] bg-gradient-to-br from-secondary to-muted rounded-lg mb-3 overflow-hidden">
                 <div className="w-full h-full flex items-center justify-center bg-accent/5 group-hover:bg-accent/10 transition-colors">
-                  <span className="text-6xl font-bold text-accent/20">02</span>
+                  <span className="text-4xl font-bold text-accent/20">02</span>
                 </div>
               </div>
-              <h3 className="text-xl font-semibold mb-2 group-hover:text-accent transition-colors">學生作品展區</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">展示優秀學生作品與創作歷程紀錄</p>
-            </div>
+              <h3 className="text-sm font-medium mb-2 line-clamp-2 group-hover:text-accent transition-colors">展場導覽時間表公布，專業導覽帶你深入了解作品...</h3>
+              <p className="text-xs text-muted-foreground">2025-11-28</p>
+            </Link>
 
-            {/* Zone Card 3 */}
-            <div className="group cursor-pointer">
-              <div className="aspect-[4/3] bg-gradient-to-br from-secondary to-muted rounded-lg mb-4 overflow-hidden">
+            {/* News Card 3 */}
+            <Link href="/news/3" className="group cursor-pointer">
+              <div className="aspect-[4/3] bg-gradient-to-br from-secondary to-muted rounded-lg mb-3 overflow-hidden">
                 <div className="w-full h-full flex items-center justify-center bg-accent/5 group-hover:bg-accent/10 transition-colors">
-                  <span className="text-6xl font-bold text-accent/20">03</span>
+                  <span className="text-4xl font-bold text-accent/20">03</span>
                 </div>
               </div>
-              <h3 className="text-xl font-semibold mb-2 group-hover:text-accent transition-colors">互動體驗區</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">參與討論、投票與分享，建立設計對話</p>
-            </div>
-          </div>
+              <h3 className="text-sm font-medium mb-2 line-clamp-2 group-hover:text-accent transition-colors">學生設計作品入選獲獎！恭喜優秀設計獲得肯定...</h3>
+              <p className="text-xs text-muted-foreground">2025-11-20</p>
+            </Link>
 
-          <div className="text-center mt-12">
-            <Button asChild variant="outline" size="lg">
-              <Link href="/zones">
-                瀏覽所有展區
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
+            {/* News Card 4 */}
+            <Link href="/news/4" className="group cursor-pointer">
+              <div className="aspect-[4/3] bg-gradient-to-br from-secondary to-muted rounded-lg mb-3 overflow-hidden">
+                <div className="w-full h-full flex items-center justify-center bg-accent/5 group-hover:bg-accent/10 transition-colors">
+                  <span className="text-4xl font-bold text-accent/20">04</span>
+                </div>
+              </div>
+              <h3 className="text-sm font-medium mb-2 line-clamp-2 group-hover:text-accent transition-colors">互動體驗區全新升級，更多參與式設計活動等你來...</h3>
+              <p className="text-xs text-muted-foreground">2025-11-15</p>
+            </Link>
+
+            {/* News Card 5 */}
+            <Link href="/news/5" className="group cursor-pointer">
+              <div className="aspect-[4/3] bg-gradient-to-br from-secondary to-muted rounded-lg mb-3 overflow-hidden">
+                <div className="w-full h-full flex items-center justify-center bg-accent/5 group-hover:bg-accent/10 transition-colors">
+                  <span className="text-4xl font-bold text-accent/20">05</span>
+                </div>
+              </div>
+              <h3 className="text-sm font-medium mb-2 line-clamp-2 group-hover:text-accent transition-colors">設計工作坊報名開始，與業界設計師面對面交流...</h3>
+              <p className="text-xs text-muted-foreground">2025-11-10</p>
+            </Link>
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-foreground text-background">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h2 className="text-3xl md:text-5xl font-bold text-balance">開始你的設計探索之旅</h2>
-          <p className="text-lg text-background/80 max-w-2xl mx-auto leading-relaxed">
-            無論你是設計學生、專業人士或是對設計有興趣的朋友， 這裡都有適合你的內容。
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-              <Link href="/zones">
-                探索作品
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-background/20 text-background hover:bg-background/10 bg-transparent"
-            >
-              <Link href="/contact">聯繫我們</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
       <Footer />
     </div>
   )

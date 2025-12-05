@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Noto_Sans_TC, Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { ThemeProvider } from "@/components/theme-provider"
 import { Navigation } from "@/components/navigation"
 import "./globals.css"
 
@@ -45,11 +46,18 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="zh-TW" className="scroll-smooth">
+    <html lang="zh-TW" className="scroll-smooth" suppressHydrationWarning>
       <body className={`${notoSansTC.variable} ${inter.variable} font-sans antialiased`}>
-        <Navigation />
-        {children}
-        <Analytics />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navigation />
+          {children}
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   )
