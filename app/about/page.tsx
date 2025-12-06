@@ -16,7 +16,7 @@ export default function AboutPage() {
     <div className="min-h-screen">
       <Navigation />
 
-      <main className="relative aspect-video px-4 sm:px-6 lg:px-8 overflow-hidden flex items-center justify-center">
+      <main className="relative aspect-[9/16] md:aspect-video px-4 sm:px-6 lg:px-8 overflow-hidden flex items-center justify-center">
         {/* Background Images with Responsive Design */}
         <div className="absolute inset-0 -z-20">
           {/* Mobile Background */}

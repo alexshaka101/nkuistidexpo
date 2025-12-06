@@ -11,7 +11,7 @@ export default function HomePage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative aspect-video px-4 sm:px-6 lg:px-8 overflow-hidden flex items-center justify-center">
+      <section className="relative aspect-[9/16] md:aspect-video px-4 sm:px-6 lg:px-8 overflow-hidden flex items-center justify-center">
         {/* Background Images with Responsive Design */}
         <div className="absolute inset-0 -z-20">
           {/* Mobile Background */}
@@ -110,19 +110,19 @@ export default function HomePage() {
             <div className="lg:w-1/2 space-y-8">
               {/* 大一 */}
               <div>
-                <h3 className="text-lg font-bold mb-2">大一</h3>
+                <h3 className="text-lg font-bold mb-2">一年級</h3>
                 <p className="text-sm text-muted-foreground">基礎造型與感知訓練</p>
               </div>
 
               {/* 大二 */}
               <div>
-                <h3 className="text-lg font-bold mb-2">大二</h3>
+                <h3 className="text-lg font-bold mb-2">二年級</h3>
                 <p className="text-sm text-muted-foreground">速度與造型的思考</p>
               </div>
 
               {/* 大三 */}
               <div>
-                <h3 className="text-lg font-bold mb-2">大三</h3>
+                <h3 className="text-lg font-bold mb-2">三年級</h3>
                 <p className="text-sm text-muted-foreground">以設計回應世界議題</p>
               </div>
             </div>

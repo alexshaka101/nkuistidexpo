@@ -261,6 +261,86 @@ export default function FacultyPage() {
     }
   }
 
+  // 龔蒂菀彩蛋 - 點擊 10 次顯示「YES!!」🎉
+  const [kungClickCount, setKungClickCount] = useState(0)
+  const [showKungYes, setShowKungYes] = useState(false)
+  const kungTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const kungResetTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  const handleKungClick = () => {
+    if (kungResetTimeoutRef.current) clearTimeout(kungResetTimeoutRef.current)
+    const newCount = kungClickCount + 1
+    setKungClickCount(newCount)
+    if (newCount >= 10) {
+      setShowKungYes(true)
+      setKungClickCount(0)
+      if (kungTimeoutRef.current) clearTimeout(kungTimeoutRef.current)
+      kungTimeoutRef.current = setTimeout(() => setShowKungYes(false), 3000)
+    } else {
+      kungResetTimeoutRef.current = setTimeout(() => setKungClickCount(0), 2000)
+    }
+  }
+
+  // 陳俊東彩蛋 - 點擊 10 次顯示「R」
+  const [chenClickCount, setChenClickCount] = useState(0)
+  const [showChenR, setShowChenR] = useState(false)
+  const chenTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const chenResetTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  const handleChenClick = () => {
+    if (chenResetTimeoutRef.current) clearTimeout(chenResetTimeoutRef.current)
+    const newCount = chenClickCount + 1
+    setChenClickCount(newCount)
+    if (newCount >= 10) {
+      setShowChenR(true)
+      setChenClickCount(0)
+      if (chenTimeoutRef.current) clearTimeout(chenTimeoutRef.current)
+      chenTimeoutRef.current = setTimeout(() => setShowChenR(false), 3000)
+    } else {
+      chenResetTimeoutRef.current = setTimeout(() => setChenClickCount(0), 2000)
+    }
+  }
+
+  // 葉恒志彩蛋 - 點擊 10 次顯示「💤」
+  const [yehClickCount, setYehClickCount] = useState(0)
+  const [showYehZzz, setShowYehZzz] = useState(false)
+  const yehTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const yehResetTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  const handleYehClick = () => {
+    if (yehResetTimeoutRef.current) clearTimeout(yehResetTimeoutRef.current)
+    const newCount = yehClickCount + 1
+    setYehClickCount(newCount)
+    if (newCount >= 10) {
+      setShowYehZzz(true)
+      setYehClickCount(0)
+      if (yehTimeoutRef.current) clearTimeout(yehTimeoutRef.current)
+      yehTimeoutRef.current = setTimeout(() => setShowYehZzz(false), 3000)
+    } else {
+      yehResetTimeoutRef.current = setTimeout(() => setYehClickCount(0), 2000)
+    }
+  }
+
+  // 宋毅仁彩蛋 - 點擊 10 次顯示「不要為難自己」
+  const [sungClickCount, setSungClickCount] = useState(0)
+  const [showSungText, setShowSungText] = useState(false)
+  const sungTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const sungResetTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  const handleSungClick = () => {
+    if (sungResetTimeoutRef.current) clearTimeout(sungResetTimeoutRef.current)
+    const newCount = sungClickCount + 1
+    setSungClickCount(newCount)
+    if (newCount >= 10) {
+      setShowSungText(true)
+      setSungClickCount(0)
+      if (sungTimeoutRef.current) clearTimeout(sungTimeoutRef.current)
+      sungTimeoutRef.current = setTimeout(() => setShowSungText(false), 3000)
+    } else {
+      sungResetTimeoutRef.current = setTimeout(() => setSungClickCount(0), 2000)
+    }
+  }
+
   // 清理彩蛋計時器
   useEffect(() => {
     return () => {
@@ -268,6 +348,14 @@ export default function FacultyPage() {
       if (changResetTimeoutRef.current) clearTimeout(changResetTimeoutRef.current)
       if (tsaiTimeoutRef.current) clearTimeout(tsaiTimeoutRef.current)
       if (tsaiResetTimeoutRef.current) clearTimeout(tsaiResetTimeoutRef.current)
+      if (kungTimeoutRef.current) clearTimeout(kungTimeoutRef.current)
+      if (kungResetTimeoutRef.current) clearTimeout(kungResetTimeoutRef.current)
+      if (chenTimeoutRef.current) clearTimeout(chenTimeoutRef.current)
+      if (chenResetTimeoutRef.current) clearTimeout(chenResetTimeoutRef.current)
+      if (yehTimeoutRef.current) clearTimeout(yehTimeoutRef.current)
+      if (yehResetTimeoutRef.current) clearTimeout(yehResetTimeoutRef.current)
+      if (sungTimeoutRef.current) clearTimeout(sungTimeoutRef.current)
+      if (sungResetTimeoutRef.current) clearTimeout(sungResetTimeoutRef.current)
     }
   }, [])
   
@@ -299,6 +387,46 @@ export default function FacultyPage() {
           </div>
         </div>
       )}
+
+      {/* 龔蒂菀彩蛋 - YES!! 🎉 */}
+      {showKungYes && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
+          <div className="animate-emoji-bounce text-center">
+            <p className="text-[100px] md:text-[180px] font-black text-yellow-400 drop-shadow-[0_0_30px_rgba(250,204,21,0.8)] select-none animate-pulse"
+               style={{
+                 textShadow: '0 0 20px #fbbf24, 0 0 40px #fbbf24, 0 0 60px #f59e0b, 0 0 80px #f59e0b',
+                 WebkitTextStroke: '3px #000000'
+               }}>
+              YES!!
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* 陳俊東彩蛋 - R */}
+      {showChenR && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
+          <div className="animate-emoji-bounce text-center">
+            <p className="text-[200px] md:text-[350px] font-black text-red-600 select-none"
+               style={{
+                 textShadow: '0 0 10px rgba(220, 38, 38, 0.5), 0 0 20px rgba(220, 38, 38, 0.3)'
+               }}>
+              R
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* 宋毅仁彩蛋 - 不要為難自己 */}
+      {showSungText && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
+          <div className="animate-emoji-bounce text-center">
+            <p className="text-4xl md:text-6xl font-bold text-foreground drop-shadow-lg bg-background/80 px-8 py-4 rounded-2xl">
+              不要為難自己
+            </p>
+          </div>
+        </div>
+      )}
       
       {/* ==================== 彩蛋彈出效果結束 ==================== */}
       
@@ -327,14 +455,22 @@ export default function FacultyPage() {
               <Card key={professor.id} className="p-6 hover:shadow-lg transition-shadow">
                 <div 
                   className={`aspect-square relative mb-4 rounded-lg overflow-hidden bg-secondary ${
-                    professor.name === "張祥唐" || professor.name === "蔡宏政" ? "select-none" : ""
+                    professor.name === "張祥唐" || professor.name === "蔡宏政" || professor.name === "龔蒂菀" || professor.name === "陳俊東" || professor.name === "葉恒志" || professor.name === "宋毅仁" ? "select-none" : ""
                   }`}
                   onClick={
                     professor.name === "張祥唐" 
                       ? handleChangClick 
                       : professor.name === "蔡宏政" 
                         ? handleTsaiClick 
-                        : undefined
+                        : professor.name === "龔蒂菀"
+                          ? handleKungClick
+                          : professor.name === "陳俊東"
+                            ? handleChenClick
+                            : professor.name === "葉恒志"
+                              ? handleYehClick
+                              : professor.name === "宋毅仁"
+                                ? handleSungClick
+                                : undefined
                   }
                 >
                   <Image
@@ -343,6 +479,12 @@ export default function FacultyPage() {
                     fill
                     className="object-cover"
                   />
+                  {/* 葉恒志彩蛋 - 💤 在頭上 */}
+                  {professor.name === "葉恒志" && showYehZzz && (
+                    <div className="absolute -top-2 right-0 z-10 pointer-events-none animate-emoji-bounce">
+                      <span className="text-[60px] md:text-[80px] drop-shadow-lg select-none">💤</span>
+                    </div>
+                  )}
                 </div>
                 <div className="space-y-3">
                   <div>
