@@ -8,10 +8,8 @@ import Link from "next/link"
 export default function HomePage() {
   return (
     <div className="min-h-screen">
-      <Navigation />
-
       {/* Hero Section */}
-      <section className="relative aspect-[9/16] md:aspect-video px-4 sm:px-6 lg:px-8 overflow-hidden flex items-center justify-center">
+      <section className="relative aspect-[9/16] md:aspect-video overflow-hidden flex items-center justify-center">
         {/* Background Images with Responsive Design */}
         <div className="absolute inset-0 -z-20">
           {/* Mobile Background */}
@@ -26,7 +24,7 @@ export default function HomePage() {
           />
         </div>
 
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-8">
             <div className="inline-block">
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-secondary rounded-full text-sm font-medium text-foreground">
@@ -71,31 +69,37 @@ export default function HomePage() {
             {/* Left Side - Date, Time & Admission */}
             <div className="lg:w-1/2 space-y-10">
               {/* Date */}
-              <div className="flex items-end gap-4">
-                <div className="text-5xl md:text-6xl font-bold tracking-tight">2026.01.09</div>
-                <div className="flex items-center gap-2 pb-2">
-                  <span className="text-base text-muted-foreground">週五</span>
-                  <span className="text-2xl text-muted-foreground">——</span>
-                  <span className="text-base text-muted-foreground">週日</span>
+              <div className="flex flex-wrap items-end gap-2 md:gap-4">
+                <div className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">2026.01.09</div>
+                <div className="flex items-center gap-1 md:gap-2 pb-1">
+                  <span className="text-sm md:text-base text-muted-foreground">週五</span>
+                  <span className="text-xl md:text-2xl text-muted-foreground">——</span>
+                  <span className="text-sm md:text-base text-muted-foreground">週日</span>
                 </div>
-                <div className="text-5xl md:text-6xl font-bold tracking-tight">11</div>
+                <div className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">11</div>
               </div>
 
               {/* Opening Hours */}
-              <div className="space-y-2">
-                <div className="flex items-center gap-4">
-                  <span className="text-3xl md:text-4xl font-bold">11:00</span>
-                  <span className="text-2xl text-muted-foreground">——</span>
-                  <span className="text-3xl md:text-4xl font-bold">14:00</span>
-                  <span className="text-2xl text-muted-foreground">——</span>
-                  <span className="text-3xl md:text-4xl font-bold">17:00</span>
+              <div className="flex items-start gap-3 md:gap-6">
+                {/* 11:00 (無標籤) */}
+                <div className="flex flex-col items-center">
+                  <span className="text-2xl md:text-3xl lg:text-4xl font-bold whitespace-nowrap">11:00</span>
                 </div>
-                <div className="flex items-center gap-4 text-sm text-muted-foreground pl-1">
-                  <span className="w-[72px]"></span>
-                  <span className="w-[91px]"></span>
-                  <span>週日</span>
-                  <span className="w-[90px]"></span>
-                  <span>週五、週六</span>
+                
+                <span className="text-xl md:text-2xl text-muted-foreground pt-1">——</span>
+                
+                {/* 14:00 (週日) */}
+                <div className="flex flex-col items-center gap-2">
+                  <span className="text-2xl md:text-3xl lg:text-4xl font-bold whitespace-nowrap">14:00</span>
+                  <span className="text-xs md:text-sm text-muted-foreground">週日</span>
+                </div>
+                
+                <span className="text-xl md:text-2xl text-muted-foreground pt-1">——</span>
+                
+                {/* 17:00 (週五、週六) */}
+                <div className="flex flex-col items-center gap-2">
+                  <span className="text-2xl md:text-3xl lg:text-4xl font-bold whitespace-nowrap">17:00</span>
+                  <span className="text-xs md:text-sm text-muted-foreground whitespace-nowrap">週五、週六</span>
                 </div>
               </div>
 
