@@ -20,12 +20,12 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "被設計的設計 | The Design of Being Designed",
   description:
-    "數位展覽網站 - 探索設計學習脈絡與策展理念。A digital exhibition showcasing design education and curatorial concepts.",
+    "工業設計系期末展 - 探索設計學習脈絡與策展理念。",
   generator: "v0.app",
-  keywords: ["設計展覽", "design exhibition", "YODEX", "設計教育", "design education"],
+  keywords: ["設計展覽", "design exhibition"],
   openGraph: {
     title: "被設計的設計 | The Design of Being Designed",
-    description: "數位展覽網站 - 探索設計學習脈絡與策展理念",
+    description: "工業設計系期末展 - 探索設計學習脈絡與策展理念",
     type: "website",
   },
   icons: {
