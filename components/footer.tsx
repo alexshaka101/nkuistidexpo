@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export function Footer() {
   return (
-    <footer className="bg-secondary border-t border-border mt-24">
+    <footer className="bg-secondary border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
@@ -70,9 +70,37 @@ export function Footer() {
         </div>
 
         <div className="mt-8 pt-8 border-t border-border">
-          <p className="text-xs text-muted-foreground text-center">
-            © 2025 被設計的設計 國立高雄科技大學 工業設計系期末展
-          </p>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            {/* Logos - Left side */}
+            <div className="flex items-center gap-4 md:gap-6">
+              <div className="h-8 md:h-10 w-auto">
+                <img 
+                  src="/logos/logo1.svg" 
+                  alt="Logo 1" 
+                  className="h-full w-auto object-contain opacity-60 dark:invert dark:opacity-60"
+                />
+              </div>
+              <div className="h-8 md:h-10 w-auto">
+                <img 
+                  src="/logos/logo2.svg" 
+                  alt="Logo 2" 
+                  className="h-full w-auto object-contain opacity-60 dark:invert dark:opacity-60"
+                />
+              </div>
+              <div className="h-8 md:h-10 w-auto">
+                <img 
+                  src="/logos/logo3.svg" 
+                  alt="Logo 3" 
+                  className="h-full w-auto object-contain opacity-60 dark:invert dark:opacity-60"
+                />
+              </div>
+            </div>
+            
+            {/* Copyright - Right side */}
+            <p className="text-xs text-muted-foreground text-center md:text-right">
+              © 2025 被設計的設計 國立高雄科技大學 工業設計系期末展
+            </p>
+          </div>
         </div>
       </div>
     </footer>

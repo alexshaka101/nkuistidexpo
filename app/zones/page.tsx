@@ -10,21 +10,21 @@ export const metadata = {
 
 const exhibitions = [
   {
-    grade: "大一",
+    grade: "一年級",
     title: "cube 立方體、油土半立體構成：基礎造型與感知訓練",
     description:
       "從最純粹的立方體出發，透過油土半立體的推壓與塑形，在反覆的操作中建立造型感知、量體節奏與光影理解，奠定後續造型設計的基礎。",
     image: "/zones/grade1.webp",
   },
   {
-    grade: "大二",
+    grade: "二年級",
     title: "摩托車：速度與造型的思考",
     description:
       "從交通工具的結構到騎乘姿態的體驗，學生在設計課程中探索造型、機能與情感之間的關係，打造屬於自己的未來車款。",
     image: "/zones/grade2.webp",
   },
   {
-    grade: "大三",
+    grade: "三年級",
     title: "SDGs：以設計回應世界議題",
     description:
       "以永續為核心，學生深入觀察生活問題，從人、環境到社會需求出發，透過研究與創新設計提出具想像力又可實踐的永續方案。",
