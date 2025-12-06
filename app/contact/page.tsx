@@ -70,7 +70,7 @@ export default function ContactPage() {
                             target="_blank"
                             rel="noopener noreferrer"
                           >
-                            nkuist-id-expo.vercel.app
+                            nkuist-id-expo.netlify.app
                           </a>
                         </div>
                       </div>
