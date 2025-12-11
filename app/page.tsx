@@ -32,6 +32,8 @@ export default function HomePage() {
           >
             <source src="/backgrounds/page_background_desktop.mp4" type="video/mp4" />
           </video>
+          {/* White Overlay */}
+          <div className="absolute inset-0 bg-white/3" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
