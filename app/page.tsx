@@ -10,18 +10,28 @@ export default function HomePage() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative aspect-[9/16] md:aspect-video overflow-hidden flex items-center justify-center">
-        {/* Background Images with Responsive Design */}
+        {/* Background Videos with Responsive Design */}
         <div className="absolute inset-0 -z-20">
-          {/* Mobile Background */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat md:hidden"
-            style={{ backgroundImage: 'url(/backgrounds/page_background_2.webp)' }}
-          />
-          {/* Desktop Background */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat hidden md:block"
-            style={{ backgroundImage: 'url(/backgrounds/page_background.webp)' }}
-          />
+          {/* Mobile Background Video */}
+          <video 
+            className="absolute inset-0 w-full h-full object-cover md:hidden"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source src="/backgrounds/page_background_mobile.mp4" type="video/mp4" />
+          </video>
+          {/* Desktop Background Video */}
+          <video 
+            className="absolute inset-0 w-full h-full object-cover hidden md:block"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source src="/backgrounds/page_background_desktop.mp4" type="video/mp4" />
+          </video>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -121,7 +131,7 @@ export default function HomePage() {
               {/* 大二 */}
               <div>
                 <h3 className="text-lg font-bold mb-2">二年級</h3>
-                <p className="text-sm text-muted-foreground">速度與造型的思考</p>
+                <p className="text-sm text-muted-foreground">造型與使用之間的探索</p>
               </div>
 
               {/* 大三 */}
