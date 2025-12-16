@@ -77,22 +77,6 @@ export default function ContactPage() {
                     </div>
                   </CardContent>
                 </Card>
-
-                <Card className="border-border">
-                  <CardContent className="p-6 space-y-4">
-                    <h3 className="text-lg font-semibold">開放時間</h3>
-                    <div className="space-y-2 text-sm">
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">週五</span>
-                        <span className="font-medium">01:00 - 17:00</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">週六、週日</span>
-                        <span className="font-medium">9:00 - 14:00</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
               </div>
           </div>
         </section>
