@@ -17,18 +17,30 @@ export default function AboutPage() {
       <Navigation />
 
       <main className="relative aspect-[9/16] md:aspect-video px-4 sm:px-6 lg:px-8 overflow-hidden flex items-center justify-center">
-        {/* Background Images with Responsive Design */}
+        {/* Background Videos with Responsive Design */}
         <div className="absolute inset-0 -z-20">
-          {/* Mobile Background */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat md:hidden"
-            style={{ backgroundImage: 'url(/backgrounds/page_background_2.webp)' }}
-          />
-          {/* Desktop Background */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat hidden md:block"
-            style={{ backgroundImage: 'url(/backgrounds/page_background.webp)' }}
-          />
+          {/* Mobile Background Video */}
+          <video 
+            className="absolute inset-0 w-full h-full object-cover md:hidden"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source src="/backgrounds/page_background_mobile.mp4" type="video/mp4" />
+          </video>
+          {/* Desktop Background Video */}
+          <video 
+            className="absolute inset-0 w-full h-full object-cover hidden md:block"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source src="/backgrounds/page_background_desktop.mp4" type="video/mp4" />
+          </video>
+          {/* White Overlay */}
+          <div className="absolute inset-0 bg-white/3" />
         </div>
 
         <div className="max-w-3xl mx-auto">
