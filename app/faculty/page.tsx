@@ -83,7 +83,7 @@ const facultyData = {
       name: "莊棋棻",
       nameEn: "Chuang Chi-Fen",
       role: "總召",
-      image: "/placeholder.svg",
+      image: "/team-photos/chuang-chi-fen.jpg",
     },
     // 2. 副招
     {
@@ -98,7 +98,7 @@ const facultyData = {
       name: "陳愷倫",
       nameEn: "Chen Kai-Lun",
       role: "副召/公關/總務",
-      image: "/placeholder.svg",
+      image: "/team-photos/chen-kai-lun.jpg",
     },
     // 3. 企劃展示
     {
@@ -106,7 +106,7 @@ const facultyData = {
       name: "周恩樂",
       nameEn: "Chou En-Le",
       role: "企劃展示",
-      image: "/placeholder.svg",
+      image: "/team-photos/chou-en-le.jpg",
     },
     {
       id: 107,
@@ -120,7 +120,7 @@ const facultyData = {
       name: "董盈均",
       nameEn: "Tung Ying-Chun",
       role: "企劃展示",
-      image: "/placeholder.svg",
+      image: "/team-photos/tung-ying-chun.jpg",
     },
     // 4. 企劃文書
     {
@@ -128,14 +128,14 @@ const facultyData = {
       name: "黃宣語",
       nameEn: "Huang Hsuan-Yu",
       role: "企劃文書",
-      image: "/placeholder.svg",
+      image: "/team-photos/huang-hsuan-yu.jpg",
     },
     {
       id: 111,
       name: "汪郁琳",
       nameEn: "Wang Yu-Lin",
       role: "企劃文書",
-      image: "/placeholder.svg",
+      image: "/team-photos/wang-yu-lin.jpg",
     },
     // 5. 視覺
     {
@@ -157,7 +157,7 @@ const facultyData = {
       name: "蔡蓉偵",
       nameEn: "Tsai Jung-Chen",
       role: "視覺",
-      image: "/placeholder.svg",
+      image: "/team-photos/tsai-jung-chen.jpg",
     },
     // 6. 影視
     {
@@ -165,7 +165,7 @@ const facultyData = {
       name: "廖若妤",
       nameEn: "Liao Jo-Yu",
       role: "影視",
-      image: "/placeholder.svg",
+      image: "/team-photos/liao-jo-yu.jpg",
     },
     {
       id: 113,
@@ -188,7 +188,7 @@ const facultyData = {
       name: "吳勃頤",
       nameEn: "Wu Po-Yi",
       role: "網站",
-      image: "/placeholder.svg",
+      image: "/team-photos/wu-po-yi.jpg",
     },
     {
       id: 116,
