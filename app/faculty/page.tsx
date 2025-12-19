@@ -143,7 +143,7 @@ const facultyData = {
       name: "王于禎",
       nameEn: "Wang Yu-Chen",
       role: "視覺",
-      image: "/placeholder.svg",
+      image: "/team-photos/wang-yu-chen.jpg",
     },
     {
       id: 110,
