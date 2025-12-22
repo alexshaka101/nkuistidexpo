@@ -91,7 +91,7 @@ const facultyData = {
       name: "洪一芳",
       nameEn: "Hung Yi-Fang",
       role: "副招",
-      image: "/team-photos/hung-yi-fang.jpg",
+      image: "/placeholder.svg",
     },
     {
       id: 103,
@@ -113,7 +113,7 @@ const facultyData = {
       name: "徐慈迎",
       nameEn: "Hsu Tzu-Ying",
       role: "企劃展示",
-      image: "/team-photos/hsu-tzu-ying.jpg",
+      image: "/placeholder.svg",
     },
     {
       id: 109,
@@ -130,13 +130,6 @@ const facultyData = {
       role: "企劃文書",
       image: "/team-photos/huang-hsuan-yu.jpg",
     },
-    {
-      id: 111,
-      name: "汪郁琳",
-      nameEn: "Wang Yu-Lin",
-      role: "企劃文書",
-      image: "/team-photos/wang-yu-lin.jpg",
-    },
     // 5. 視覺
     {
       id: 104,
@@ -150,7 +143,7 @@ const facultyData = {
       name: "沈敏榕",
       nameEn: "Shen Min-Jung",
       role: "視覺",
-      image: "/team-photos/shen-min-jung.jpg",
+      image: "/placeholder.svg",
     },
     {
       id: 112,
@@ -166,6 +159,13 @@ const facultyData = {
       nameEn: "Liao Jo-Yu",
       role: "影視",
       image: "/team-photos/liao-jo-yu.jpg",
+    },
+    {
+      id: 111,
+      name: "汪郁琳",
+      nameEn: "Wang Yu-Lin",
+      role: "影視",
+      image: "/team-photos/wang-yu-lin.jpg",
     },
     {
       id: 113,
@@ -195,7 +195,7 @@ const facultyData = {
       name: "邱凱鴻",
       nameEn: "Chiu Kai-Hung",
       role: "網站",
-      image: "/team-photos/chiu-kai-hung.jpg",
+      image: "/placeholder.svg",
     },
   ],
   partners: [

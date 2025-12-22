@@ -24,7 +24,6 @@ export function Navigation() {
     { label: "展覽介紹", href: "/about" },
     { label: "展場內容", href: "/zones" },
     { label: "展覽團隊", href: "/faculty" },
-    { label: "最新消息", href: "/news" },
     { label: "交通資訊", href: "/transportation" },
     { label: "聯繫", href: "/contact" },
   ]

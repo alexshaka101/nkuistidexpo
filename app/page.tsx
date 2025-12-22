@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ArrowRight, Sparkles, Users, BookOpen, MessageCircle } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
 
 export default function HomePage() {
   return (
@@ -163,19 +162,60 @@ export default function HomePage() {
           </div>
 
           {/* News Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {/* News Card 1 */}
             <Link href="/news/1" className="group cursor-pointer">
-              <div className="aspect-[4/3] bg-gradient-to-br from-secondary to-muted rounded-lg mb-3 overflow-hidden relative">
-                <Image
-                  src="/news/news1.jpg"
-                  alt="被設計的設計期末展"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+              <div className="aspect-[4/3] bg-gradient-to-br from-secondary to-muted rounded-lg mb-3 overflow-hidden">
+                <div className="w-full h-full flex items-center justify-center bg-accent/5 group-hover:bg-accent/10 transition-colors">
+                  <span className="text-4xl font-bold text-accent/20">01</span>
+                </div>
               </div>
-              <h3 className="text-sm font-medium mb-2 line-clamp-2 group-hover:text-accent transition-colors">探索設計的成長旅程：「被設計的設計」期末展 1月9日盛大登場</h3>
-              <p className="text-xs text-muted-foreground">2025-12-16</p>
+              <h3 className="text-sm font-medium mb-2 line-clamp-2 group-hover:text-accent transition-colors">2025期末設計展正式開幕，邀請您一同參與設計盛會...</h3>
+              <p className="text-xs text-muted-foreground">2025-12-05</p>
+            </Link>
+
+            {/* News Card 2 */}
+            <Link href="/news/2" className="group cursor-pointer">
+              <div className="aspect-[4/3] bg-gradient-to-br from-secondary to-muted rounded-lg mb-3 overflow-hidden">
+                <div className="w-full h-full flex items-center justify-center bg-accent/5 group-hover:bg-accent/10 transition-colors">
+                  <span className="text-4xl font-bold text-accent/20">02</span>
+                </div>
+              </div>
+              <h3 className="text-sm font-medium mb-2 line-clamp-2 group-hover:text-accent transition-colors">展場導覽時間表公布，專業導覽帶你深入了解作品...</h3>
+              <p className="text-xs text-muted-foreground">2025-11-28</p>
+            </Link>
+
+            {/* News Card 3 */}
+            <Link href="/news/3" className="group cursor-pointer">
+              <div className="aspect-[4/3] bg-gradient-to-br from-secondary to-muted rounded-lg mb-3 overflow-hidden">
+                <div className="w-full h-full flex items-center justify-center bg-accent/5 group-hover:bg-accent/10 transition-colors">
+                  <span className="text-4xl font-bold text-accent/20">03</span>
+                </div>
+              </div>
+              <h3 className="text-sm font-medium mb-2 line-clamp-2 group-hover:text-accent transition-colors">學生設計作品入選獲獎！恭喜優秀設計獲得肯定...</h3>
+              <p className="text-xs text-muted-foreground">2025-11-20</p>
+            </Link>
+
+            {/* News Card 4 */}
+            <Link href="/news/4" className="group cursor-pointer">
+              <div className="aspect-[4/3] bg-gradient-to-br from-secondary to-muted rounded-lg mb-3 overflow-hidden">
+                <div className="w-full h-full flex items-center justify-center bg-accent/5 group-hover:bg-accent/10 transition-colors">
+                  <span className="text-4xl font-bold text-accent/20">04</span>
+                </div>
+              </div>
+              <h3 className="text-sm font-medium mb-2 line-clamp-2 group-hover:text-accent transition-colors">互動體驗區全新升級，更多參與式設計活動等你來...</h3>
+              <p className="text-xs text-muted-foreground">2025-11-15</p>
+            </Link>
+
+            {/* News Card 5 */}
+            <Link href="/news/5" className="group cursor-pointer">
+              <div className="aspect-[4/3] bg-gradient-to-br from-secondary to-muted rounded-lg mb-3 overflow-hidden">
+                <div className="w-full h-full flex items-center justify-center bg-accent/5 group-hover:bg-accent/10 transition-colors">
+                  <span className="text-4xl font-bold text-accent/20">05</span>
+                </div>
+              </div>
+              <h3 className="text-sm font-medium mb-2 line-clamp-2 group-hover:text-accent transition-colors">設計工作坊報名開始，與業界設計師面對面交流...</h3>
+              <p className="text-xs text-muted-foreground">2025-11-10</p>
             </Link>
           </div>
         </div>

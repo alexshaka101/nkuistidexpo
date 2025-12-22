@@ -2,7 +2,6 @@ import { Footer } from "@/components/footer"
 import { getAllNews } from "@/lib/news-data"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
-import Image from "next/image"
 
 export default function NewsPage() {
   const newsArticles = getAllNews()
@@ -33,33 +32,24 @@ export default function NewsPage() {
               href={`/news/${article.id}`}
               className="block group"
             >
-              <article className="border border-border rounded-lg overflow-hidden hover:border-accent transition-colors">
-                {article.image ? (
-                  <div className="aspect-[16/9] relative overflow-hidden bg-secondary">
-                    <Image
-                      src={article.image}
-                      alt={article.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                ) : (
-                  <div className="aspect-[16/9] bg-gradient-to-br from-secondary to-muted flex items-center justify-center">
-                    <span className="text-6xl font-bold text-accent/20">
+              <article className="border border-border rounded-lg p-6 hover:border-accent transition-colors">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-secondary to-muted rounded-lg flex items-center justify-center">
+                    <span className="text-2xl font-bold text-accent/40">
                       {article.id.padStart(2, '0')}
                     </span>
                   </div>
-                )}
-                <div className="p-6">
-                  <time className="text-xs text-muted-foreground">
-                    {article.date}
-                  </time>
-                  <h2 className="text-xl font-bold mt-2 mb-2 group-hover:text-accent transition-colors">
-                    {article.title}
-                  </h2>
-                  <p className="text-sm text-muted-foreground line-clamp-2">
-                    {article.summary}
-                  </p>
+                  <div className="flex-1 min-w-0">
+                    <time className="text-xs text-muted-foreground">
+                      {article.date}
+                    </time>
+                    <h2 className="text-xl font-bold mt-1 mb-2 group-hover:text-accent transition-colors">
+                      {article.title}
+                    </h2>
+                    <p className="text-sm text-muted-foreground line-clamp-2">
+                      {article.summary}
+                    </p>
+                  </div>
                 </div>
               </article>
             </Link>
