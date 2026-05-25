@@ -59,21 +59,21 @@ export default function HomePage() {
                   <span className="text-xl md:text-2xl text-muted-foreground">——</span>
                   <span className="text-sm md:text-base text-muted-foreground">週四</span>
                 </div>
-                <div className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">25</div>
+                <div className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">26</div>
               </div>
 
               {/* Opening Hours */}
               <div className="flex items-start gap-3 md:gap-6">
-                {/* 11:00 (無標籤) */}
+                {/* 09:00 (無標籤) */}
                 <div className="flex flex-col items-center">
-                  <span className="text-2xl md:text-3xl lg:text-4xl font-bold whitespace-nowrap">11:00</span>
+                  <span className="text-2xl md:text-3xl lg:text-4xl font-bold whitespace-nowrap">09:00</span>
                 </div>
                 
                 <span className="text-xl md:text-2xl text-muted-foreground pt-1">——</span>
                 
-                {/* 14:00 (週日) */}
+                {/* 13:00 (週日) */}
                 <div className="flex flex-col items-center gap-2">
-                  <span className="text-2xl md:text-3xl lg:text-4xl font-bold whitespace-nowrap">14:00</span>
+                  <span className="text-2xl md:text-3xl lg:text-4xl font-bold whitespace-nowrap">13:00</span>
                   <span className="text-xs md:text-sm text-muted-foreground">週二</span>
                 </div>
                 

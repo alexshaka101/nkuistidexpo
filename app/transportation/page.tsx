@@ -122,14 +122,18 @@ export default function TransportationPage() {
                   <div className="space-y-4">
                     <div>
                       <p className="font-semibold mb-2">週二</p>
-                      <p className="text-muted-foreground">14:00 - 17:00</p>
+                      <p className="text-muted-foreground">13:00 - 17:00</p>
                     </div>
                     <div>
                       <p className="font-semibold mb-2">週三、週四</p>
-                      <p className="text-muted-foreground">11:00 - 14:00</p>
+                      <p className="text-muted-foreground">09:00 - 17:00</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold mb-2">週五</p>
+                      <p className="text-muted-foreground">09:00 - 12:00</p>
                     </div>
                     <div className="pt-4 border-t border-border">
-                      <p className="text-sm text-muted-foreground">開幕時間：2026/6/23 (二) 14:00</p>
+                      <p className="text-sm text-muted-foreground">開幕時間：2026/6/23 (二) 13:00</p>
                     </div>
                   </div>
                 </CardContent>
