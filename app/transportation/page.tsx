@@ -25,7 +25,7 @@ export default function TransportationPage() {
             <Card className="border-border">
               <CardContent className="p-8 space-y-6">
                 <div className="flex items-center gap-3">
-                  <MapPin className="h-6 w-6 text-accent" />
+                  <MapPin className="h-6 w-6 text-accent-palette-0" />
                   <h2 className="text-2xl font-bold">展覽地點</h2>
                 </div>
                 <div className="space-y-4">
@@ -59,8 +59,8 @@ export default function TransportationPage() {
               {/* MRT */}
               <Card className="border-border">
                 <CardContent className="p-6 space-y-4">
-                  <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                    <Train className="h-6 w-6 text-accent" />
+                  <div className="h-12 w-12 bg-accent-palette-0/10 rounded-lg flex items-center justify-center">
+                    <Train className="h-6 w-6 text-accent-palette-0" />
                   </div>
                   <h3 className="text-xl font-bold">捷運</h3>
                   <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
@@ -73,8 +73,8 @@ export default function TransportationPage() {
               {/* Bus */}
               <Card className="border-border">
                 <CardContent className="p-6 space-y-4">
-                  <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                    <Bus className="h-6 w-6 text-accent" />
+                  <div className="h-12 w-12 bg-accent-palette-1/10 rounded-lg flex items-center justify-center">
+                    <Bus className="h-6 w-6 text-accent-palette-1" />
                   </div>
                   <h3 className="text-xl font-bold">公車</h3>
                   <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
@@ -94,8 +94,8 @@ export default function TransportationPage() {
               {/* Car */}
               <Card className="border-border">
                 <CardContent className="p-6 space-y-4">
-                  <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                    <Car className="h-6 w-6 text-accent" />
+                  <div className="h-12 w-12 bg-accent-palette-2/10 rounded-lg flex items-center justify-center">
+                    <Car className="h-6 w-6 text-accent-palette-2" />
                   </div>
                   <h3 className="text-xl font-bold">開車</h3>
                   <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
@@ -116,7 +116,7 @@ export default function TransportationPage() {
               <Card className="border-border">
                 <CardContent className="p-8 space-y-6">
                   <div className="flex items-center gap-3">
-                    <Clock className="h-6 w-6 text-accent" />
+                    <Clock className="h-6 w-6 text-accent-palette-3" />
                     <h2 className="text-2xl font-bold">展覽時間</h2>
                   </div>
                   <div className="space-y-4">
@@ -142,24 +142,24 @@ export default function TransportationPage() {
               <Card className="border-border">
                 <CardContent className="p-8 space-y-6">
                   <div className="flex items-center gap-3">
-                    <Info className="h-6 w-6 text-accent" />
+                    <Info className="h-6 w-6 text-accent-palette-0" />
                     <h2 className="text-2xl font-bold">參觀須知</h2>
                   </div>
                   <ul className="space-y-3 text-muted-foreground">
                     <li className="flex items-start gap-2">
-                      <span className="text-accent mt-1">•</span>
+                      <span className="text-accent-palette-1 mt-1">•</span>
                       <span>展覽免費參觀，無需預約</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-accent mt-1">•</span>
+                      <span className="text-accent-palette-2 mt-1">•</span>
                       <span>請保持安靜，尊重其他參觀者</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-accent mt-1">•</span>
+                      <span className="text-accent-palette-3 mt-1">•</span>
                       <span>展場內禁止飲食</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-accent mt-1">•</span>
+                      <span className="text-accent-palette-0 mt-1">•</span>
                       <span>歡迎拍照</span>
                     </li>
                   </ul>

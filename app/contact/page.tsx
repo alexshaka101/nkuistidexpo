@@ -28,14 +28,14 @@ export default function ContactPage() {
 
                     <div className="space-y-4">
                       <div className="flex gap-4">
-                        <div className="h-10 w-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <Instagram className="h-5 w-5 text-accent" />
+                        <div className="h-10 w-10 bg-accent-palette-0/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <Instagram className="h-5 w-5 text-accent-palette-0" />
                         </div>
                         <div className="space-y-1">
                           <p className="text-sm font-medium">社群帳號</p>
                           <a
                             href="https://www.instagram.com/nkustiiid/"
-                            className="text-sm text-muted-foreground hover:text-accent transition-colors"
+                            className="text-sm text-muted-foreground hover:text-accent-palette-0 transition-colors"
                             target="_blank"
                             rel="noopener noreferrer"
                           >
@@ -45,8 +45,8 @@ export default function ContactPage() {
                       </div>
 
                       <div className="flex gap-4">
-                        <div className="h-10 w-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <MapPin className="h-5 w-5 text-accent" />
+                        <div className="h-10 w-10 bg-accent-palette-1/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <MapPin className="h-5 w-5 text-accent-palette-1" />
                         </div>
                         <div className="space-y-1">
                           <p className="text-sm font-medium">地址</p>
@@ -59,14 +59,14 @@ export default function ContactPage() {
                       </div>
 
                       <div className="flex gap-4">
-                        <div className="h-10 w-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <Globe className="h-5 w-5 text-accent" />
+                        <div className="h-10 w-10 bg-accent-palette-2/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <Globe className="h-5 w-5 text-accent-palette-2" />
                         </div>
                         <div className="space-y-1">
                           <p className="text-sm font-medium">網站</p>
                           <a
                             href="https://nkuist-id-expo.netlify.app/"
-                            className="text-sm text-muted-foreground hover:text-accent transition-colors"
+                            className="text-sm text-muted-foreground hover:text-accent-palette-2 transition-colors"
                             target="_blank"
                             rel="noopener noreferrer"
                           >

@@ -26,8 +26,16 @@
   --secondary-foreground: #000000;
   --muted: #ededed;
   --muted-foreground: #666666;
-  --accent: #791f1f;
-  --accent-foreground: #ffffff;
+  --accent-palette-0: #CDD058;
+  --accent-palette-0-foreground: #1a1a1a;
+  --accent-palette-1: #C55DAC;
+  --accent-palette-1-foreground: #ffffff;
+  --accent-palette-2: #6BC294;
+  --accent-palette-2-foreground: #ffffff;
+  --accent-palette-3: #796FB3;
+  --accent-palette-3-foreground: #ffffff;
+  --accent: var(--accent-palette-0);
+  --accent-foreground: var(--accent-palette-0-foreground);
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
   --border: #ededed;
@@ -62,8 +70,16 @@
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
-  --accent: #791f1f;
-  --accent-foreground: #ffffff;
+  --accent-palette-0: #CDD058;
+  --accent-palette-0-foreground: #1a1a1a;
+  --accent-palette-1: #C55DAC;
+  --accent-palette-1-foreground: #ffffff;
+  --accent-palette-2: #6BC294;
+  --accent-palette-2-foreground: #ffffff;
+  --accent-palette-3: #796FB3;
+  --accent-palette-3-foreground: #ffffff;
+  --accent: var(--accent-palette-0);
+  --accent-foreground: var(--accent-palette-0-foreground);
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
   --border: oklch(0.269 0 0);
@@ -191,4 +207,32 @@
 
 .animate-emoji-bounce {
   animation: emoji-bounce 3s ease-in-out forwards;
+}
+
+/* 四色輔色盤工具類（配合 AccentColorProvider 隨機洗牌） */
+@layer utilities {
+  .text-accent-palette-0 { color: var(--accent-palette-0); }
+  .text-accent-palette-1 { color: var(--accent-palette-1); }
+  .text-accent-palette-2 { color: var(--accent-palette-2); }
+  .text-accent-palette-3 { color: var(--accent-palette-3); }
+
+  .bg-accent-palette-0\/10 { background-color: color-mix(in srgb, var(--accent-palette-0) 10%, transparent); }
+  .bg-accent-palette-1\/10 { background-color: color-mix(in srgb, var(--accent-palette-1) 10%, transparent); }
+  .bg-accent-palette-2\/10 { background-color: color-mix(in srgb, var(--accent-palette-2) 10%, transparent); }
+  .bg-accent-palette-3\/10 { background-color: color-mix(in srgb, var(--accent-palette-3) 10%, transparent); }
+
+  .border-accent-palette-0 { border-color: var(--accent-palette-0); }
+  .border-accent-palette-1 { border-color: var(--accent-palette-1); }
+  .border-accent-palette-2 { border-color: var(--accent-palette-2); }
+  .border-accent-palette-3 { border-color: var(--accent-palette-3); }
+
+  .hover\:border-accent-palette-0:hover { border-color: var(--accent-palette-0); }
+  .hover\:border-accent-palette-1:hover { border-color: var(--accent-palette-1); }
+  .hover\:border-accent-palette-2:hover { border-color: var(--accent-palette-2); }
+  .hover\:border-accent-palette-3:hover { border-color: var(--accent-palette-3); }
+
+  .hover\:text-accent-palette-0:hover { color: var(--accent-palette-0); }
+  .hover\:text-accent-palette-1:hover { color: var(--accent-palette-1); }
+  .hover\:text-accent-palette-2:hover { color: var(--accent-palette-2); }
+  .hover\:text-accent-palette-3:hover { color: var(--accent-palette-3); }
 }

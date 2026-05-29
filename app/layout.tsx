@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Noto_Sans_TC, Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
+import { AccentColorProvider } from "@/components/accent-color-provider"
 import { Navigation } from "@/components/navigation"
 import "./globals.css"
 
@@ -54,6 +55,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <AccentColorProvider />
           <Navigation />
           {children}
           <Analytics />

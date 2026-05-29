@@ -189,27 +189,11 @@ const facultyData = {
   partners: [
     {
       id: 201,
-      name: "合作單位名稱一",
-      nameEn: "Partner Organization 1",
-      type: "主要合作單位",
-      description: "合作單位簡介與合作內容說明",
-      logo: "/placeholder.svg",
-    },
-    {
-      id: 202,
-      name: "合作單位名稱二",
-      nameEn: "Partner Organization 2",
-      type: "協辦單位",
-      description: "合作單位簡介與合作內容說明",
-      logo: "/placeholder.svg",
-    },
-    {
-      id: 203,
-      name: "合作單位名稱三",
-      nameEn: "Partner Organization 3",
+      name: "武六不能王早午餐",
+      nameEn: "Double five Double six",
       type: "贊助單位",
-      description: "合作單位簡介與合作內容說明",
-      logo: "/placeholder.svg",
+      logo: "/team-photos/56.jpg",
+      url: "https://www.facebook.com/double5566/?locale=zh_TW",
     },
   ],
 }
@@ -403,9 +387,9 @@ export default function FacultyPage() {
       {showChenR && (
         <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
           <div className="animate-emoji-bounce text-center">
-            <p className="text-[200px] md:text-[350px] font-black text-red-600 select-none"
+            <p className="text-[200px] md:text-[350px] font-black text-accent select-none"
                style={{
-                 textShadow: '0 0 10px rgba(220, 38, 38, 0.5), 0 0 20px rgba(220, 38, 38, 0.3)'
+                 textShadow: '0 0 10px rgba(74, 74, 74, 0.5), 0 0 20px rgba(74, 74, 74, 0.3)'
                }}>
               R
             </p>
@@ -535,34 +519,44 @@ export default function FacultyPage() {
             <h2 className="text-3xl font-bold text-foreground">合作單位</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {facultyData.partners.map((partner) => (
-              <Card key={partner.id} className="p-6 hover:shadow-lg transition-shadow">
-                <div className="aspect-video relative mb-4 rounded-lg overflow-hidden bg-secondary/50 flex items-center justify-center">
-                  <Image
-                    src={partner.logo || "/placeholder.svg"}
-                    alt={partner.name}
-                    width={200}
-                    height={100}
-                    className="object-contain p-4"
-                  />
-                </div>
-                <div className="space-y-3">
-                  <div>
-                    <h3 className="text-xl font-bold text-foreground">{partner.name}</h3>
-                    <p className="text-sm text-muted-foreground">{partner.nameEn}</p>
+            {facultyData.partners.map((partner) => {
+              const card = (
+                <Card className="p-6 hover:shadow-lg transition-shadow h-full">
+                  <div className="aspect-video relative mb-4 rounded-lg overflow-hidden bg-secondary/50 flex items-center justify-center">
+                    <Image
+                      src={partner.logo || "/placeholder.svg"}
+                      alt={partner.name}
+                      width={200}
+                      height={100}
+                      className="object-contain p-4"
+                    />
                   </div>
-                  <p className="text-sm font-medium text-accent">{partner.type}</p>
-
-                  <Separator />
-
-                  <div>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {partner.description}
-                    </p>
+                  <div className="space-y-3">
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground">{partner.name}</h3>
+                      <p className="text-sm text-muted-foreground">{partner.nameEn}</p>
+                    </div>
+                    <p className="text-sm font-medium text-accent">{partner.type}</p>
                   </div>
-                </div>
-              </Card>
-            ))}
+                </Card>
+              )
+
+              if (partner.url) {
+                return (
+                  <a
+                    key={partner.id}
+                    href={partner.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                  >
+                    {card}
+                  </a>
+                )
+              }
+
+              return <div key={partner.id}>{card}</div>
+            })}
           </div>
         </section>
       </div>
