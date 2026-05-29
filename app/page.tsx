@@ -145,7 +145,7 @@ export default function HomePage() {
                 />
               </div>
               <h3 className="text-sm font-medium mb-2 line-clamp-2 group-hover:text-accent transition-colors">2026期末設計展正式開幕，邀請您一同參與設計盛會...</h3>
-              <p className="text-xs text-muted-foreground">2026-12-05</p>
+              <p className="text-xs text-muted-foreground">2026-06-01</p>
             </Link>
 
           </div>
